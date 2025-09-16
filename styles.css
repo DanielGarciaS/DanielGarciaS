@@ -1,0 +1,305 @@
+/* Fuentes y colores cyberpunk */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono&display=swap');
+
+:root {
+  --bg: #0d1117;
+  --glass: rgba(255, 255, 255, 0.05);
+  --neon: #00f0ff;
+  --green: #00ff88;
+  --text: #e6edf3;
+  --sub: #8b949e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #0d1117 0%, #000 100%);
+  border-bottom: 2px solid var(--neon);
+  position: relative;
+}
+
+.hero-content {
+  text-align: center;
+  animation: fadeIn 2s ease-in;
+}
+
+.typing {
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(1.8em, 5vw, 3em);
+  color: var(--neon);
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid var(--neon);
+  animation: typing 4s steps(30) 1s both, blink 1s infinite;
+}
+
+.subtitle {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: var(--sub);
+}
+
+.cta-button, .pdf-button {
+  display: inline-block;
+  margin: 15px 10px 0 0;
+  padding: 12px 25px;
+  background: transparent;
+  border: 2px solid var(--green);
+  color: var(--green);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover, .pdf-button:hover {
+  background: var(--green);
+  color: #000;
+  box-shadow: 0 0 15px var(--green);
+}
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 60px 0;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease forwards;
+  animation-play-state: paused;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: auto;
+}
+
+h2 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--neon);
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+.job {
+  margin-bottom: 30px;
+}
+
+.role {
+  color: var(--green);
+  font-weight: bold;
+}
+
+.tech-grid, .certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.tech-item, .cert {
+  background: var(--glass);
+  border: 1px solid var(--neon);
+  padding: 10px;
+  text-align: center;
+  color: var(--neon);
+  font-weight: bold;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.tech-item:hover, .cert:hover {
+  background: var(--neon);
+  color: #000;
+  box-shadow: 0 0 10px var(--neon);
+}
+
+.project {
+  background: var(--glass);
+  border-left: 4px solid var(--green);
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.tag {
+  display: inline-block;
+  background: rgba(0, 240, 255, 0.2);
+  border: 1px solid var(--neon);
+  color: var(--neon);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  margin-right: 8px;
+}
+
+.alert {
+  background: rgba(255, 0, 0, 0.1);
+  border-left: 4px solid red;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.alert small {
+  color: #ccc;
+  font-size: 0.9em;
+}
+
+.alert h3 {
+  color: red;
+  margin-top: 5px;
+}
+
+.cli-toggle {
+  background: transparent;
+  border: 1px solid var(--neon);
+  color: var(--neon);
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.cli-toggle:hover {
+  background: var(--neon);
+  color: #000;
+}
+
+.terminal {
+  background: #000;
+  color: #00ff00;
+  padding: 20px;
+  font-family: 'Courier New', monospace;
+  border-radius: 8px;
+  overflow-x: auto;
+  box-shadow: 0 0 10px #00ff00;
+  margin-top: 15px;
+}
+
+.terminal .prompt {
+  color: #00f0ff;
+}
+
+.terminal .output {
+  color: #fff;
+  margin-left: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  color: var(--sub);
+  font-size: 0.9em;
+}
+
+/* Modo claro */
+body.light-mode {
+  --bg: #f5f5f5;
+  --text: #111;
+  --sub: #555;
+  --neon: #005f99;
+  --green: #007a4d;
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+body.light-mode .glass {
+  background: rgba(255, 255, 255, 0.6);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .terminal {
+  background: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+}
+
+body.light-mode .cert {
+  background: rgba(0, 122, 77, 0.1);
+  border: 1px solid var(--green);
+  color: var(--green);
+}
+
+body.light-mode .cert:hover {
+  background: var(--green);
+  color: #fff;
+}
+
+.theme-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: 2px solid var(--neon);
+  color: var(--neon);
+  padding: 10px;
+  font-size: 1.2em;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+  background: var(--neon);
+  color: #000;
+  box-shadow: 0 0 10px var(--neon);
+}
+
+/* Animaciones */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px) }
+  to { opacity: 1; transform: translateY(0) }
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.glass {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+/* Nuevas secciones CV */
+#experience ul, #skills ul, #certs ul {
+  margin-left: 20px;
+  list-style: disc;
+}
+
+#education p, #languages p {
+  margin-bottom: 10px;
+}
